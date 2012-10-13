@@ -14,7 +14,7 @@ Run application in embedded server:
 ~~~ sh
 mvn jetty:run
 ~~~
-
+  
 
 Continous deployment
 --------
@@ -22,7 +22,7 @@ Application is deployed from master branch to heroku platform:
 http://add2012.herokuapp.com/
 
 Ci server used for deployment is:  
-TODO
+http://ci.pragmatists.pl:9090/  
 
 Wiki
 --------
