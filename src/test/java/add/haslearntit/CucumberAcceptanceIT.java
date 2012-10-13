@@ -10,29 +10,29 @@ import cucumber.junit.Cucumber.Options;
 
 @RunWith(Cucumber.class)
 @Options(
-		features = "src/test/resources/features",
-		/* monochrome = true, */
-		format = { "pretty", "html:target/cucumber-html-report" }
-		)
+        features = "src/test/resources/features",
+        tags = "~@pending",
+        format = { "pretty", "html:target/cucumber-html-report" }
+        )
 public class CucumberAcceptanceIT {
 
-	public static Server server;
+    public static Server server;
 
-	@BeforeClass
-	public static void startServer() throws Exception{
-		
-		server = EmbeddedServer.createServer();
-		server.start();
-		
-		System.err.println("--------------------------- Server for acceptance tests started --");
-	}
-	
-	@AfterClass
-	public static void shutdownServer() throws Exception{
-		
-		server.stop();
-		server.join();
-		
-		System.err.println("--------------------------- Server for acceptance tests stopped --");
-	}
+    @BeforeClass
+    public static void startServer() throws Exception{
+        
+        server = EmbeddedServer.createServer();
+        server.start();
+        
+        System.err.println("--------------------------- Server for acceptance tests started --");
+    }
+    
+    @AfterClass
+    public static void shutdownServer() throws Exception{
+        
+        server.stop();
+        server.join();
+        
+        System.err.println("--------------------------- Server for acceptance tests stopped --");
+    }
 }
